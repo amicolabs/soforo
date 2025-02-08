@@ -73,10 +73,10 @@ package file
 
 import (
 	"fmt"
-    "io/fs"
-    "net/url"
-    "os"
-    "path"
+	"io/fs"
+	"net/url"
+	"os"
+	"path"
 
 	"github.com/amicolabs/soforo/examples/storage"
 )
@@ -152,18 +152,18 @@ This is how you can use the file system driver.
 package main
 
 import (
-    "fmt"
-    "net/url"
+	"fmt"
+	"net/url"
 
-    "github.com/amicolabs/soforo/examples/storage"
-    _ "github.com/amicolabs/soforo/examples/storage/file"
+	"github.com/amicolabs/soforo/examples/storage"
+	_ "github.com/amicolabs/soforo/examples/storage/file"
 )
 
 func main() {
-    u, _ := url.Parse("file:///tmp")
-    repo, _ := storage.Drivers.Open(u)
-    data, _ := repo.ReadFile("test.txt")
-    fmt.Println(string(data))
+	u, _ := url.Parse("file:///tmp")
+	repo, _ := storage.Drivers.Open(u)
+	data, _ := repo.ReadFile("test.txt")
+	fmt.Println(string(data))
 }
 ```
 
